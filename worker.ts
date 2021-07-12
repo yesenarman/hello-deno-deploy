@@ -8,10 +8,11 @@ addEventListener("fetch", (event) => {
   }
 
   const elapsedTime = performance.now() - startTime;
+  const elapsedSeconds = elapsedTime / 1000;
 
   event.respondWith(
     new Response(
-      `Completed ${iterations} in ${elapsedTime / 1000} seconds: sum = ${sum}`,
+      `Completed ${iterations} iterations in ${elapsedSeconds} seconds: sum = ${sum}`,
       {
         headers: {
           "content-type": "text/plain",
